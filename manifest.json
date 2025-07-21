@@ -1,0 +1,26 @@
+{
+  "name": "Мой Литературный Сайт",
+  "short_name": "Литература",
+  "start_url": "/index.html",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3f51b5",
+  "description": "Сайт о великих писателях и их произведениях",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icons/icon-72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["books", "education"],
+  "lang": "ru-RU"
+}

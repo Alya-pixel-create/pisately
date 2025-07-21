@@ -1,0 +1,208 @@
+:root {
+  --primary-color: #3a1c13;
+  --secondary-color: #6d4c41;
+  --accent-color: #d7ccc8;
+  --light-color: #efebe9;
+  --text-color: #3e2723;
+  --gold-color: #c9b037;
+  --section-bg: rgba(255, 253, 250, 0.9);
+}
+
+body {
+  font-family: 'Playfair Display', serif;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0;
+  background-color: var(--light-color);
+  color: var(--text-color);
+  background-image: url('https://images.unsplash.com/photo-1589998059171-988d887df646?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 800px;
+  margin: 4rem auto;
+  padding: 0 1rem;
+}
+
+h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gold-color);
+  text-align: center;
+  position: relative;
+  letter-spacing: 1px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+  background: var(--secondary-color);
+}
+
+h2 {
+  color: var(--primary-color);
+  font-size: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--gold-color);
+  position: relative;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: var(--secondary-color);
+}
+
+#feedbackForm {
+  background: var(--section-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--gold-color);
+  box-shadow: 0 0 0 2px rgba(201, 176, 55, 0.3);
+}
+
+.submit-btn {
+  background: var(--gold-color);
+  color: var(--primary-color);
+  border: none;
+  padding: 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1.1rem;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  background: #e0c341;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+#lastMessages {
+  background: var(--section-bg);
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.message-item {
+  background: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  position: relative;
+  border-left: 5px solid var(--gold-color);
+}
+
+.message-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--gold-color), var(--secondary-color));
+}
+
+.message-item p {
+  margin: 0.5rem 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.message-item strong {
+  color: var(--primary-color);
+}
+
+/* Анимации */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+#feedbackForm,
+#lastMessages {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+#lastMessages {
+  animation-delay: 0.1s;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .container {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.7rem;
+  }
+  
+  #feedbackForm,
+  #lastMessages {
+    padding: 1.5rem;
+  }
+}
